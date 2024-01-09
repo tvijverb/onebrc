@@ -29,6 +29,7 @@ The following techniques have been tested to get the fastest possible file read 
 - (5) chunked parallel memory-mapped file + split new line     =>   real    0m1.252s
 
 (5) Was the fastest, reading the full 13.8 GB file in 1.252 seconds. Averaging read speeds of over 11 GB/s.
+Note that this is just reading the file, it still needs to be processed. See below for the results.
 
 # Rust Solving Attempts
 Attempt 2 is the fastest with 9.135 seconds. This time would be 5th place on the original Java challenge leaderboard. (early jan 2024)
