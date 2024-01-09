@@ -35,16 +35,10 @@ Note that this is just reading the file, it still needs to be processed. See bel
 Attempt 2 is the fastest with 9.135 seconds. This time would be 5th place on the original Java challenge leaderboard. (early jan 2024)
 
 ## Attempt 1:
-See attempt_1.rs. Using memory-mapped file + split new line + collect Vec<&[u8]>
-real    0m23.547s
-user    1m50.033s
-sys     0m46.479s
+See attempt_1.rs. Using memory-mapped file + split new line + collect Vec<&[u8]> => 23.547s
 
 ## Attempt 2:
-See attempt_2.rs chunked parallel memory-mapped file + split new line
-real    0m9.135s
-user    1m40.257s
-sys     0m6.188s
+See attempt_2.rs chunked parallel memory-mapped file + split new line => 9.135s
 
 ## Create Samples:
 Compile the sample creator on your platform
@@ -57,4 +51,9 @@ And create the measurments file, rename it to measurements_full.txt and remove l
 ./create_sample 1000000000
 mv measurements.txt measurements_full.txt
 sed -i '$d' measurements_full.txt
+```
+
+# Measure runtime
+```bash
+time <binary_name>
 ```
