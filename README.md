@@ -11,11 +11,13 @@ link to the original challenge: [https://github.com/gunnarmorling/1brc](https://
 - Lowest of 3 runs
 
 ## Optimizing the file reader
-- BufReader::new + reader.lines()                          =>   real    0m35.496s
-- no alloc BufReader + custom read_line                    =>   real    0m21.801s
-- memory-mapped file + split new line + collect Vec<&[u8]> =>   real    0m17.810s
-- memory-mapped file + split new line + for_each &[u8]     =>   real    0m9.517s
-- chunked parallel memory-mapped file + split new line     =>   real    0m1.252s
+The following techniques have been tested to get the fastest possible file read speed.
+
+- (1) BufReader::new + reader.lines()                          =>   real    0m35.496s
+- (2) no alloc BufReader + custom read_line                    =>   real    0m21.801s
+- (3) memory-mapped file + split new line + collect Vec<&[u8]> =>   real    0m17.810s
+- (4) memory-mapped file + split new line + for_each &[u8]     =>   real    0m9.517s
+- (5) chunked parallel memory-mapped file + split new line     =>   real    0m1.252s
 
 ## Attempt 1:
 - memory-mapped file + split new line + collect Vec<&[u8]>
