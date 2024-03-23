@@ -40,6 +40,9 @@ See attempt_1.rs. Using memory-mapped file + split new line + collect Vec<&[u8]>
 ## Attempt 2:
 See attempt_2.rs chunked parallel memory-mapped file + split new line => 9.135s
 
+## Attempt 3:
+See main.rs chunked parallel memory-mapped file + sum of temperatures => 6.713s
+
 ## Create Samples:
 Compile the sample creator on your platform
 ```bash
